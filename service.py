@@ -46,10 +46,10 @@ class Main:
         self._init_vars()
         self.WINDOW.clearProperty('LibraryDataProvider_Running')
         a_total = datetime.datetime.now()
-        self._fetch_random()
+        #self._fetch_random()
         self._fetch_recent()
-        self._fetch_recommended()
-        self._fetch_favourite()
+        #self._fetch_recommended()
+        #self._fetch_favourite()
         b_total = datetime.datetime.now()
         c_total = b_total - a_total
         log('Total time needed for all queries: %s' % c_total)
@@ -96,26 +96,26 @@ class Main:
                 # Update random items
                 count += 1
                 if count == 1200:  # 10 minutes
-                    self._fetch_random()
+                    #self._fetch_random()
                     count = 0    # reset counter
 
     def _update(self, type):
         xbmc.sleep(1000)
         if type == 'movie':
-            LIBRARY._fetch_recommended_movies()
+            #LIBRARY._fetch_recommended_movies()
             LIBRARY._fetch_recent_movies()
         elif type == 'episode':
-            LIBRARY._fetch_recommended_episodes()
+            #LIBRARY._fetch_recommended_episodes()
             LIBRARY._fetch_recent_episodes()
-            LIBRARY._fetch_favourite_episodes()
+            #LIBRARY._fetch_favourite_episodes()
         elif type == 'video':
             # only on db update
-            LIBRARY._fetch_recommended_movies()
-            LIBRARY._fetch_recommended_episodes()
+            #LIBRARY._fetch_recommended_movies()
+            #LIBRARY._fetch_recommended_episodes()
             LIBRARY._fetch_recent_movies()
             LIBRARY._fetch_recent_episodes()
         elif type == 'music':
-            LIBRARY._fetch_recommended_albums()
+            #LIBRARY._fetch_recommended_albums()
             LIBRARY._fetch_recent_albums()
         elif type == 'musicvideo':
             LIBRARY._fetch_recent_musicvideos()
