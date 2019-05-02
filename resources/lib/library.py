@@ -166,7 +166,7 @@ class LibraryFunctions():
 
     # Common sort/filter arguments shared by multiple queries
     recent_sort = {"order": "descending", "method": "dateadded"}
-    unplayed_filter = {"field": "playcount", "operator": "lessthan", "value": "1"}
+    unplayed_filter = {"field": "playcount", "operator": "is", "value": "0"}
     specials_filter = {"field": "season", "operator": "greaterthan", "value": "0"}
     inprogress_filter = {"field": "inprogress", "operator": "true", "value": ""}
 
